@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BillSectionComponent implements OnInit {
 
+  numOfTables : number = 10;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  numberOfTables() {
+    return new Array(this.numOfTables);
+  }
 }

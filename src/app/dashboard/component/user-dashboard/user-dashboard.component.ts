@@ -13,6 +13,7 @@ export class UserDashboardComponent implements OnInit {
   employeeSection: boolean = false;
   settings: boolean = false;
   analytics: boolean = false;
+  menu: boolean = false;
 
   constructor(private auth: AuthService) { }
 
@@ -26,6 +27,7 @@ export class UserDashboardComponent implements OnInit {
     this.employeeSection = false;
     this.settings = false;
     this.analytics = false;
+    this.menu = false;
   }
 
   // show dashboard
@@ -56,6 +58,12 @@ export class UserDashboardComponent implements OnInit {
   showAnalytics() {
     this.setOff();
     this.analytics = true;
+  }
+
+  // show dashboard
+  showMenu() {
+    this.setOff();
+    this.menu = true;
   }
 
   // sign out

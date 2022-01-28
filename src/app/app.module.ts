@@ -16,6 +16,7 @@ import { BillSectionComponent } from './dashboard/component/bill-section/bill-se
 import { EmployeeSectionComponent } from './dashboard/component/employee-section/employee-section.component';
 import { SettingsComponent } from './dashboard/component/settings/settings.component';
 import { AnalyticsComponent } from './dashboard/component/analytics/analytics.component';
+import { MenuComponent } from './dashboard/component/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AnalyticsComponent } from './dashboard/component/analytics/analytics.co
     BillSectionComponent,
     EmployeeSectionComponent,
     SettingsComponent,
-    AnalyticsComponent
+    AnalyticsComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

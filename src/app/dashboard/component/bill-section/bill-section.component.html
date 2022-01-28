@@ -5,5 +5,35 @@
         <h4 class="text-muted text-warning"> Bill Section</h4>
         <hr class="text-muted">
     </div>
-    
+
+    <!-- first row -->
+    <div class="row pe-2 mt-3">
+        <div class="col-sm-4 text-center text-success">
+            <a style="text-decoration: none">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5>Total Tables</h5>
+                        <h6>{{numOfTables}}</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- main -->
+    <h4 class="text-muted mt-3">Tables : </h4>
+    <div class=" p-2 mt-3 ">
+        <div class="row table1" >
+            <div class="col-sm-2 mt-2" *ngFor="let in of numberOfTables() ;let i = index" >
+                <a href="" class="text-center text-dark card shadow" style="text-decoration: none;cursor: pointer;">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            {{i+1}}
+                        </div>
+                    </div> 
+                </a>
+            </div>
+        </div>
+    </div>
+
 </div>

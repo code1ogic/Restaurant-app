@@ -1,0 +1,137 @@
+<div class="container-fluid m-0 p-0" style="min-height: 100vh;">
+
+    <!-- heading -->
+    <div class="mt-2">
+        <h4 class="text-muted text-warning"> Menu Section</h4>
+        <hr class="text-muted">
+    </div>
+
+    <!-- first row -->
+    <div class="row pe-2 mt-3">
+        <div class="col-sm-4 text-center">
+            <a href="" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h6>Add New Menu</h6>
+                        <h5>+</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-4 text-center">
+            <a style="text-decoration: none;">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h6 class="text-danger">Total Menu</h6>
+                        <h5>{{totalMenus.length}}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- main -->
+    <div class="row pe-2 mt-3">
+        <div id="listOfMenu">
+            <h4 class="text-muted mt-3">Menu</h4>
+            <div class="col-sm-12 mt-3">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead class="text-success">
+                                <tr>
+                                    <th scope="col" class="text-center">Name</th>
+                                    <th scope="col" class="text-center">Full</th>
+                                    <th scope="col" class="text-center">Half</th>
+                                    <th scope="col" class="text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let menu of totalMenus">
+                                    <td scope="col" class="text-center">{{menu.name}}</td>
+                                    <td scope="col" class="text-center">{{menu.full_price}}</td>
+                                    <td scope="col" class="text-center">{{menu.half_price}}</td>
+                                    <td scope="col" class="text-center">
+                                        <button class="btn me-2 btn-outline-success" data-bs-toggle="modal"
+                                            data-bs-target="#editMenu" (click)="editMenuInfo(menu)">Edit</button>
+                                        <button class="btn btn-outline-danger"
+                                            (click)="deleteMenu(menu)">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- create-menu-modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="firstName" name="firstname" placeholder="first name"
+                            [(ngModel)]="name">
+                        <label for="firstName">Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="last name"
+                            [(ngModel)]="full">
+                        <label for="lastname">Full price</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="email" name="email" placeholder="name@example.com"
+                            [(ngModel)]="half">
+                        <label for="email">Half price</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                        (click)="addMenu()">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- edit-menu-modal -->
+    <div class="modal fade" id="editMenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="firstName" name="firstname" placeholder="first name"
+                            [(ngModel)]="name">
+                        <label for="firstName">Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="last name"
+                            [(ngModel)]="full">
+                        <label for="lastname">Full price</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="email" name="email" placeholder="name@example.com"
+                            [(ngModel)]="half">
+                        <label for="email">Half price</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        (click)="saveEditedMenu()">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

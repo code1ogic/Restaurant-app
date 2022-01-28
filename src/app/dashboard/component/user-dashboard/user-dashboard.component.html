@@ -7,6 +7,7 @@
             <hr class="text-white">
             <a class="p-3" (click)="showDashboard()">Dashboard</a>
             <a class="p-3" (click)="showBillSection()">Bill Section</a>
+            <a class="p-3" (click)="showMenu()">Menu</a>
             <a class="p-3" (click)="showEmployeeSection()">Employees Section</a>
             <a class="p-3" (click)="showSettings()">Settings</a>
             <a class="p-3" (click)="showAnalytics()">Analytics</a>
@@ -18,6 +19,7 @@
             <app-employee-section *ngIf="employeeSection"></app-employee-section>
             <app-analytics *ngIf="analytics"></app-analytics>
             <app-settings *ngIf="settings"></app-settings>
+            <app-menu *ngIf="menu"></app-menu>
         </div>
 
     </div>
