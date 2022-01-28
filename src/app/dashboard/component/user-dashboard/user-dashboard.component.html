@@ -1,18 +1,23 @@
-<div class="conatiner-fluid" style="overflow: hidden;">
+<div class="conatiner-fluid p-0 m-0" style="overflow: hidden;">
 
     <div class="row">
         <!-- sidebar -->
-        <div class="col-sm-2 bg-dark sidebar p-3" >
-            <a class="p-3 text-warning"><strong>Restaurant App</strong> </a><hr class="text-white">
-            <a href="#about" class="p-3">Dashboard</a>
-            <a href="#services" class="p-3">Bill Section</a>
-            <a href="#clients" class="p-3">Employees Section</a>
-            <a href="#contact" class="p-3">Settings</a>
-            <a href="#contact" class="p-3">Analytics</a>
-            <a href="#contact" class="p-3">Sign out</a>
+        <div class="col-sm-2 bg-dark sidebar p-3 pe-0">
+            <a class="p-3 text-warning"><strong>Restaurant App</strong> </a>
+            <hr class="text-white">
+            <a class="p-3" (click)="showDashboard()">Dashboard</a>
+            <a class="p-3" (click)="showBillSection()">Bill Section</a>
+            <a class="p-3" (click)="showEmployeeSection()">Employees Section</a>
+            <a class="p-3" (click)="showSettings()">Settings</a>
+            <a class="p-3" (click)="showAnalytics()">Analytics</a>
+            <a class="p-3" (click)="signout()">Sign out</a>
         </div>
-        <div class="col-sm-10" style="background-color: blanchedalmond;">
-            
+        <div class="col-sm-10">
+            <app-admin-panel *ngIf="dashboard"></app-admin-panel>
+            <app-bill-section *ngIf="billSection"></app-bill-section>
+            <app-employee-section *ngIf="employeeSection"></app-employee-section>
+            <app-analytics *ngIf="analytics"></app-analytics>
+            <app-settings *ngIf="settings"></app-settings>
         </div>
 
     </div>
